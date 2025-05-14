@@ -1,0 +1,126 @@
+
+/* Botões */
+.botoes-produtos {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Modal */
+.modal-produtos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  font-family: 'Poppins', sans-serif;
+}
+.modal-conteudo h2 {
+  color: #042222;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.modal-conteudo {
+  background: #F1F7F7;
+  padding: 20px;
+  border-radius: 20px;
+  width: 95%;
+  max-width: 550px;
+}
+
+.modal-conteudo input {
+  width: 90%;
+  background: #ccc;
+  fill: #042222;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+/* Produtos encontrados */
+#lista-produtos-encontrados .item-produto {
+  background: #ccc;
+  color: #042222;
+  margin-bottom: 8px;
+  padding: 10px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.item-produto button {
+  background-color: #00df82;
+  color: black;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.item-produto button:hover {
+  background-color: #00b56a;
+  color: white;
+}
+/* Botões dentro do modal */
+.modal-conteudo .btn {
+  font-family: 'Poppins', sans-serif;
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.modal-conteudo .btn.red {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.modal-conteudo .btn.light {
+  background-color: #00df82;
+  color: #042222;
+  border: 1px solid #ccc;
+}
+
+/* Lista de produtos adicionados */
+#produtos-adicionados .produto-item {
+  background-color: #ffffff;
+  color: black;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.produto-item .info {
+  display: flex;
+  flex-direction: column;
+}
+
+.produto-item .remover {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}

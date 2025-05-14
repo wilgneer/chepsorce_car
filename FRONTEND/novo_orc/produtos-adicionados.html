@@ -1,0 +1,32 @@
+
+<!-- Título da lista -->
+<h3 class="titulo-lista">Lista de Produtos Adicionados:</h3>
+
+<!-- Cabeçalho -->
+<div class="cabecalho-lista">
+  <div class="col descricao">Descrição</div>
+  <div class="col unidade">U</div>
+  <div class="col valor">Valor</div>
+  <div class="col qtd">Qtd.</div>
+  <div class="col remover"> </div>
+</div>
+
+<!-- Lista dinâmica -->
+<div id="produtos-adicionados" class="lista-produtos">
+  <!-- Exemplo de item -->
+  <div class="produto-item">
+    <div class="col descricao"><strong>Funilaria</strong></div>
+    <div class="col unidade">PC</div>
+    <div class="col valor">R$ 250,00</div>
+    <div class="col qtd"><input type="number" min="1" value="1" onchange="atualizarTotal(this)"></div>
+    <div class="col remover"><button class="remover">X</button></div>
+  </div>
+</div>
+
+<!-- Total -->
+<div class="total-container">
+  <strong>Valor total:</strong>
+  <span id="valor-total">R$ 250,00</span>
+</div>
+
+<script src="atualizar-total.js"></script>

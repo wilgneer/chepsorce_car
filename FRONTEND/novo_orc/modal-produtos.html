@@ -1,0 +1,21 @@
+
+<!-- Botões principais -->
+<div class="botoes-produtos">
+  <button class="btn green" onclick="abrirModalProdutos()">Adicionar Produto</button>
+</div>
+
+<!-- Modal de Produtos -->
+<div id="modal-produtos" class="modal-produtos">
+  <div class="modal-conteudo">
+    <h2>Produtos:</h2>
+    <input type="text" id="busca-produto" placeholder="Buscar produto...">
+    <div id="lista-produtos-encontrados"></div>
+
+    <button class="btn light" onclick="fecharModalProdutos()">Fechar</button>
+    <button class="btn green" onclick="window.location.href='../cadastro/produto.html'">Novo Produto</button>
+  </div>
+</div>
+
+<!-- Lista de produtos adicionados ao orçamento -->
+<h3>Produtos Selecionados</h3>
+<div id="produtos-adicionados"></div>

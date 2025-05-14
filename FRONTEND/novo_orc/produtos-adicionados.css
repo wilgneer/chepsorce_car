@@ -1,0 +1,139 @@
+
+.titulo-lista {
+    margin-top: 30px;
+    font-family: 'Poppins', sans-serif;
+    color: #000;
+  }
+  
+  .cabecalho-lista, .produto-item {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 0.8fr 0.5fr;
+    gap: 10px;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .cabecalho-lista {
+    margin-bottom: 10px;
+    color: #00df82;
+    font-weight: bold;
+  }
+  
+  .lista-produtos .produto-item {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    color: black;
+    margin-bottom: 10px;
+  }
+  
+  .produto-item .col input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .col.remover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .btn-remover {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+  
+  .total-container {
+    background-color: #ffffff;
+    color: #042222;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 16px;
+    max-width: 300px;
+  }
+  
+  .total-container .valor {
+    color: #03624C;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .tabela-produtos {
+    margin-top: 20px;
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .cabecalho-produtos {
+    display: grid;
+    grid-template-columns: 15fr 10fr 5fr 5fr 1fr 0.5fr;
+    gap: 70px;
+    background-color: #042222;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .item-produto {
+    display: grid;
+    grid-template-columns: 15fr 0.5fr 1fr 0.5fr 1fr 0.5fr;
+    gap: 10px;
+    padding: 10px;
+    background-color: #042222;
+    color: white;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0 0 10px 10px;
+    margin-bottom: 5px;
+  }
+
+  .item-produto .descricao {
+    word-break: break-word;
+  }
+  
+  .item-produto input[type="number"] {
+    width: 60px;
+    padding: 4px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  .btn-remover {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .btn-remover::before {
+    content: none !important; /* remove ícones herdados */
+  }
+
+  

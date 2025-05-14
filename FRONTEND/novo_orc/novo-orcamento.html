@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Novo Orçamento - OrceCar</title>
+  <link rel="stylesheet" href="novo-orcamento.css">
+  <link rel="stylesheet" href="modal-produtos.css">
+  <link rel="stylesheet" href="produtos-adicionados.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <h1 class="titulo">Novo Orçamento</h1>
+
+    <div class="cabecalho-info">
+      <span>Protocolo(nº): <span id="nrprotocolo">XXXXXXXXXX</span></span>
+      <span>Criação: <span id="dtcriacao"></span></span>
+    </div>
+
+    <div class="dados-gerais">
+      <div class="input-group">
+        <label>Cliente (CPF):</label>
+        <input type="text" id="cpfcliente">
+        <div id="cliente-info" class="info-box"></div>
+      </div>
+      <div class="input-group">
+        <label>Placa Carro:</label>
+        <input type="text" id="placacarro">
+        <div id="carro-info" class="info-box"></div>
+      </div>
+    </div>
+
+    <div class="botoes-produtos">
+      <button class="btn green" onclick="abrirModalProdutos()">
+        <img src="icons/add.png" alt="Ícone Adicionar" />
+        <span>Adicionar Produto</span>
+      </button>
+    </div>
+
+    <!-- Modal Produtos -->
+    <div id="modal-produtos" class="modal-produtos">
+      <div class="modal-conteudo">
+        <h2>Produtos:</h2>
+        <input type="text" id="busca-produto" placeholder="Buscar produto...">
+        <div id="lista-produtos-encontrados"></div>
+        <button class="btn red" onclick="fecharModalProdutos()">Fechar</button>
+        <button class="btn light" onclick="window.location.href='../cadastro/produto.html'">Novo Produto</button>
+      </div>
+    </div>
+
+    <h3 class="titulo-lista">Lista de Produtos Adicionados:</h3>
+    <div class="tabela-produtos">
+      <div class="cabecalho-produtos">
+        <span>Descrição</span>
+        <span>Unidade</span>
+        <span>Valor</span>
+        <span>Qtd</span>
+        <span>Ação</span>
+      </div>
+      <div id="produtos-adicionados"></div>
+    </div>
+
+    <div class="total-container">
+      <strong>Valor Total:</strong>
+      <span class="valor" id="valor-total">R$ 0,00</span>
+    </div>
+
+    <div class="observacoes-box">
+      <label for="observacoes">Observações:</label>
+      <textarea id="observacoes" placeholder="Digite suas observações aqui..."></textarea>
+    </div>
+
+    <div class="botoes-final">
+      <button class="btn-cancelar" onclick="cancelarOrcamento()"><span style="color: darkred;">✗</span> Cancelar</button>
+      <button class="btn-salvar" id="btnSalvar"><span style="color: #042222;">⭘</span> Salvar</button>
+    </div>
+  </div>
+
+  <script src="produtos-adicionado.js"></script>
+  <script src="atualizar-total.js"></script>
+  <script src="modal-produtos.js"></script>
+  <script src="novo-orcamento.js"></script>
+</body>
+</html>

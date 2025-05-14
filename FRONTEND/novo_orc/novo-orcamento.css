@@ -1,0 +1,195 @@
+
+body {
+  background-color: #AACBC4;
+  font-family: 'Poppins', sans-serif;
+  color: #fff;
+  margin: 0;
+  padding: 20px;
+}
+
+.titulo {
+  background-color: #042222;
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px; /* ou 30%, como quiser */
+}
+
+
+.cabecalho-info {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.cabecalho-info span {
+  color: #000; /* Títulos */
+}
+
+.cabecalho-info span span {
+  color: #6f7d7d; /* Valores como protocolo e data */
+}
+
+.dados-gerais {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.input-group {
+  flex: 1;
+  min-width: 250px;
+  max-width: 400px;
+}
+
+.input-group label {
+  color: #000;
+  font-weight: bold;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.input-group input {
+  flex: 1;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  font-size: 16px;
+  background: white;
+  color: black;
+  border: none;
+}
+
+.item-cliente {
+  background-color: #787878;
+  color: black;
+  padding: 6px 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+.item-cliente:hover {
+  background-color: #d6e6e6;
+}
+
+.info-box {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.item-carro {
+  background-color: #787878;
+  color: black;
+  padding: 6px 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+  z-index: 10;
+  position: relative;
+}
+
+.item-carro:hover {
+  background-color: #d6e6e6;
+}
+
+.info-box {
+  margin-top: 5px;
+  font-size: 14px;
+  color: #ccc;
+  position: relative;
+  z-index: 5;
+}
+
+.botoes-produtos {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.botoes-produtos .btn {
+  font-family: 'Poppins', sans-serif;
+  padding: 15px 28px;
+  border-radius: 10px;
+  font-weight: 575;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+  background: #f1f7f7;
+}
+
+.botoes-produtos .btn.green:hover {
+  background: #042222;
+  color: #f1f7f7;
+}
+
+.btn img {
+  width: 13px;
+  height: 14px;
+  object-fit: contain;
+  
+}
+
+.observacoes-box {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.observacoes-box label {
+  font-weight: bold;
+  color: #000;
+}
+
+.observacoes-box textarea {
+  width: 100%;
+  height: 100px;
+  border-radius: 10px;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background-color: #F1F8F8;
+  border: none;
+  resize: none;
+}
+
+.botoes-final {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-cancelar {
+  background-color: #F1F8F8;
+  color: #000;
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
+.btn-salvar {
+  background-color: #00E382;
+  color: #042222;
+  border: none;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+}
+
