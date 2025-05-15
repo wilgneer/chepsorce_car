@@ -10,12 +10,13 @@
   <div class="container">
     <img src="icons/orcecar_telas.png" alt="Logo OrceCar" class="logo" />
 
+    <!-- AQUI ESTAVA FALTANDO -->
     <div class="menu">
-      <button class="btn green" onclick="irPara('consulta-orcamento.html')">
+      <button class="btn light" onclick="irPara('/consulta-orcamento')">
         <img src="icons/paper.png" alt="Ícone Consulta Orçamento" />
-        Consulta Orçamento
+        <span>Consulta Orçamento</span>
       </button>
-
+      
       <button class="btn light" onclick="irPara('../novo_orc/novo-orcamento.html')">
         <img src="icons/app.png" alt="Ícone Novo Orçamento" />
         <span>Novo Orçamento</span>
@@ -23,19 +24,19 @@
 
       <button class="btn light" onclick="irPara('novo-cliente.html')">
         <img src="icons/new-account.png" alt="Ícone Novo Cliente" />
-        Novo Cliente
+        <span>Novo Cliente</span>
       </button>
 
       <button class="btn light" onclick="irPara('consulta-cliente.html')">
         <img src="icons/customer.png" alt="Ícone Consulta Cliente" />
-        Consulta Cliente
+        <span>Consulta Cliente</span>
       </button>
 
       <button class="btn light" onclick="irPara('configuracoes.html')">
         <img src="icons/settings.png" alt="Ícone Configurações" />
-        Configurações
+        <span>Configurações</span>
       </button>
-    </div>
+    </div> <!-- FIM DA DIV .menu -->
 
     <button class="logout" onclick="logout()">
       <img src="icons/logout.png" alt="Ícone Logout" />

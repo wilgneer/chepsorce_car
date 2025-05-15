@@ -50,10 +50,10 @@ body {
     color: #F1F7F7;
   }
 
-  .green {
-    background-color: #00df82;
-    color: #000;
-  }
+  .btn.green {
+  background-color: #00df82;
+  color: #000;
+}
   
   .light {
     background-color: #F1F7F7;

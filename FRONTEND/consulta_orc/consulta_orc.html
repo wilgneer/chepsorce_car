@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Consulta de Orçamentos</title>
+  <link rel="stylesheet" href="/consulta_orc/consulta_orc.css">
+</head>
+<body>
+  <div class="top-bar">
+  <h2>Consulta de Orçamentos</h2>
+  <div style="display: flex; gap: 10px; align-items: center;">
+    <input type="text" id="buscaOrcamento" placeholder="Buscar orçamento...">
+    <button onclick="buscarOrcamento()">Pesquisar</button>
+  </div>
+</div>
+
+  <table id="tabela-orcamentos">
+    <thead>
+      <tr>
+        <th>Nº Orçamento</th>
+        <th>Cliente</th>
+        <th>Email</th>
+        <th>Carro</th>
+        <th>Placa</th>
+        <th>Data</th>
+        <th>Detalhes</th>
+        <th>Impressão</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Modal -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content" id="print-area">
+      <span class="close" onclick="fecharModal()">&times;</span>
+      <div id="detalhes-container"></div>
+    </div>
+  </div>
+
+  <script src="/consulta_orc/consulta_orc.js"></script>
+</body>
+</html>
