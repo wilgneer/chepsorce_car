@@ -45,29 +45,32 @@ function verDetalhes(id) {
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("detalhes-container");
-
       const total = data.itens.reduce((soma, item) => soma + (Number(item.qtdproduto) * Number(item.valorunitario)), 0);
+      const dataOrcamento = data.orcamento.dtorcamento || data.orcamento.datacriacao || null;
+      const dataFormatada = dataOrcamento ? new Date(dataOrcamento).toLocaleDateString() : '---';
 
       const itensHTML = data.itens.map(item => {
         const qtd = Number(item.qtdproduto) || 0;
         const valor = Number(item.valorunitario) || 0;
         const subtotal = qtd * valor;
         return `
-          <tr>
-            <td>${item.nmproduto}</td>
-            <td>${item.unidadedemedida}</td>
-            <td>${qtd}</td>
-            <td>R$ ${valor.toFixed(2)}</td>
-            <td>R$ ${subtotal.toFixed(2)}</td>
+          <tr style="border-bottom: 1px solid #ccc;">
+            <td style="padding: 8px;">${item.nmproduto}</td>
+            <td style="padding: 8px;">${item.unidadedemedida}</td>
+            <td style="padding: 8px;">${qtd}</td>
+            <td style="padding: 8px;">R$ ${valor.toFixed(2)}</td>
+            <td style="padding: 8px;">R$ ${subtotal.toFixed(2)}</td>
           </tr>
         `;
       }).join('');
 
       container.innerHTML = `
-        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; font-size: 14px; margin: 40px;">
+        <div style="display: flex; justify-content: flex-end; margin-bottom: 10px;">
+          <button onclick="fecharModal()" style="background: #d33; color: white; border: none; padding: 6px 10px; font-size: 14px; cursor: pointer; border-radius: 4px;">X</button>
+        </div>
+        <div id="print-area" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333; font-size: 14px; margin: 40px;">
           <header style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ccc; padding-bottom: 20px; margin-bottom: 20px;">
-            <!-- Aqui você deve colocar o caminho da sua logo -->
-            <div><img src="logo.png" alt="Logo" style="height: 80px;" /></div>
+            <div><img src="/novo_orc/icons/logo.png" alt="Logo" style="height: 80px;" /></div>
             <div style="text-align: right;">
               <h1 style="font-size: 22px; margin: 0;">${data.empresa.nmempresa}</h1>
               <p>CNPJ: ${data.empresa.cnpj}</p>
@@ -96,7 +99,7 @@ function verDetalhes(id) {
           <div style="margin-bottom: 25px;">
             <h2 style="font-size: 16px; color: #2b7a78; border-bottom: 1px solid #ccc; padding-bottom: 4px;">Detalhes do Orçamento</h2>
             <p><strong>Nº Orçamento:</strong> ${data.orcamento.idorcamento}</p>
-            <p><strong>Data:</strong> ${new Date(data.orcamento.datacriacao).toLocaleDateString()}</p>
+            <p><strong>Data:</strong> ${dataFormatada}</p>
 
             <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
               <thead>
@@ -113,8 +116,8 @@ function verDetalhes(id) {
               </tbody>
             </table>
 
-            <div style="text-align: right; font-family: 'Poppins', sans-serif; font-size: 26px; font-weight: bold; color: #0A2342; margin-top: 20px;">
-              VALOR TOTAL: R$ ${total.toFixed(2)}
+            <div style="text-align: right; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 500; color: #0A2342; margin-top: 20px;">
+              Valor Total: R$ ${total.toFixed(2)}
             </div>
           </div>
 
@@ -144,21 +147,25 @@ function imprimirOrcamento(id) {
   verDetalhes(id);
   setTimeout(() => {
     const printContents = document.getElementById("print-area").innerHTML;
-    const win = window.open('', '', 'width=900,height=600');
+    const win = window.open('', '_blank');
     win.document.write(`
       <html>
         <head>
-          <title>Impressão de Orçamento</title>
+          <title></title>
           <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-          <style>body { font-family: 'Poppins', sans-serif; }</style>
+          <style>
+            body { font-family: 'Poppins', sans-serif; margin: 40px; }
+            @media print {
+              title { display: none; }
+            }
+          </style>
         </head>
-        <body>
+        <body onload="window.print(); window.close();">
           ${printContents}
         </body>
       </html>
     `);
     win.document.close();
-    win.print();
   }, 600);
 }
 
