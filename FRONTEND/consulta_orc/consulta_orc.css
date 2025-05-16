@@ -7,23 +7,24 @@ body {
 table {
   width: 100%;
   border-collapse: collapse;
+  overflow-x: auto;
 }
 
 th, td {
   padding: 12px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #33cc99;
   text-align: center;
 }
 
 th {
-  background-color: #007bff;
-  color: white;
+  background-color: #00df82;
+  color: #042222;
 }
 
 button {
   padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
+  background-color: #042222;
+  color: #F1f7f7;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -69,6 +70,8 @@ button {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .top-bar h2 {
@@ -80,6 +83,8 @@ button {
   border: 1px solid #ccc;
   border-radius: 8px;
   font-size: 14px;
+  width: 100%;
+  max-width: 300px;
 }
 
 /* Definindo negrito para títulos */
@@ -89,22 +94,49 @@ h4, h3 {
 
 /* Estilo para o conteúdo leve */
 p, td {
-  font-weight: lighter;  /* Fontes mais leves para o conteúdo */
+  font-weight: lighter;
 }
 
 /* Estilo para o valor total */
 .valor-total {
-  font-size: 3em;  /* 3x maior do que a fonte atual */
-  color: #00df82;  /* Cor combinando com a paleta (#00df82 - verde claro) */
+  font-size: 2.5em;
+  color: #0A2342; /* Azul marinho */
   font-weight: bold;
   text-align: center;
   margin-top: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Modificar a cor de fundo da tabela para se alinhar com a paleta */
+/* Cor de fundo do cabeçalho da tabela */
 thead tr {
   background-color: #AACBC4;
 }
 thead th {
   font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .modal-content {
+    width: 95%;
+    padding: 10px;
+  }
+
+  th, td {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .top-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .valor-total {
+    font-size: 1.8em;
+  }
+
+  #buscaOrcamento {
+    width: 100%;
+  }
 }
